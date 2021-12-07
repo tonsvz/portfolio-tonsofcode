@@ -405,6 +405,8 @@ h3 {
   border: none;
   margin-bottom: 0.5rem;
   margin-right: 0.5rem;
+  padding: 1rem;
+  background-color: white;
 }
 .project-card button a {
   text-decoration: none;
