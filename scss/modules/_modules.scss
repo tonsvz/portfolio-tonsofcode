@@ -1,0 +1,54 @@
+@use "../partials/variables" as *;
+@use "../partials/mixins" as *;
+
+.profile-card-layout {
+  @include card-profile-layout;
+  @include card;
+}
+
+.front-end-card {
+  @include card;
+  @include front-end-layout;
+}
+
+.design-card {
+  @include design-card-layout;
+  @include card;
+}
+
+.projects-count-card {
+  @include card;
+  @include project-card-layout;
+}
+
+.project-card {
+  @include card;
+  @include project-card;
+}
+
+.project-card:last-child {
+  margin-bottom: 2rem; //Gap only for blog cards.
+}
+
+.blogs-count-card {
+  @include card;
+}
+
+.blogs-card {
+  @include card;
+  @include blogs-card;
+}
+
+.experiences {
+  @include card;
+  @include experiences-cards;
+}
+
+.hobbies {
+  @include card;
+  @include hobbies-cards;
+}
+
+footer {
+  @include footer;
+}

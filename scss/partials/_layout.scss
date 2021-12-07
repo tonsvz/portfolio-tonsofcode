@@ -1,0 +1,199 @@
+@use "../partials/variables" as *;
+
+// Basic Layout
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: $box-sizing;
+}
+
+img {
+  display: block;
+}
+
+body,
+html {
+  font-family: $montserrat;
+  background-color: $gray-background;
+  color: $gray-dark;
+  margin: 1rem;
+}
+
+// Global settings
+li {
+  list-style: none;
+  font-family: $montserrat;
+  font-weight: $fw-sm;
+  font-size: $fs-xs;
+  color: $gray-dark;
+}
+
+h2 {
+  font-family: $montserrat;
+  font-size: $fs-normal;
+  font-weight: $fw-xl;
+  color: $gray-dark;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-family: $montserrat;
+  font-size: $fs-xs;
+  font-weight: $fw-md;
+  color: $gray-dark;
+}
+
+@media screen and (min-width: 720px) {
+  body {
+    display: grid;
+    grid-template-rows: 17rem 9rem 3rem 1fr;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+  }
+
+  .profile-card-layout {
+    grid-column: 1 / span 3;
+    grid-row: span 3;
+  }
+
+  .experiences {
+    grid-column: span 3;
+    grid-row: 4;
+  }
+
+  .experiences-logo {
+    width: 40%;
+  }
+
+  .hobbies {
+    grid-column: span 3;
+    grid-row: 5 / span 3;
+  }
+
+  .skills {
+    grid-row: 1 / 2;
+    grid-column: 4 / span 3;
+  }
+
+  .design-card {
+    grid-row: 2;
+    grid-column: 4 / span 3;
+  }
+
+  .projects {
+    grid-row: 2;
+    grid-column: 4 / span 3;
+    transform: translateY(60px);
+  }
+
+  .project-card {
+    height: auto;
+  }
+
+  .blogs {
+    grid-column: span 3;
+    grid-row: 8;
+    transform: translateY(-1rem);
+  }
+
+  footer {
+    grid-row: 10;
+    grid-column: span 6;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  body {
+    min-height: 100vh;
+    display: grid;
+    /* grid-template-rows: 17rem 15rem 15rem auto 1fr 1fr; */
+    grid-template-columns: repeat(12, 1fr);
+    padding: 1rem;
+    max-width: 1250px;
+    margin: 0 auto;
+  }
+
+  .profile-card-layout {
+    grid-column: 1 / span 4;
+    height: 35rem;
+  }
+
+  .skills {
+    grid-column: 5 / span 9;
+    display: flex;
+  }
+
+  .front-end-card {
+    width: 50%;
+    height: 100%;
+  }
+
+  .design-card {
+    margin-left: 1rem;
+    height: 50%;
+    width: 80%;
+  }
+
+  .projects {
+    transform: translateY(-70px);
+    grid-row: 2;
+    grid-column: 5 / span 8;
+  }
+
+  .project-card {
+    display: flex;
+    margin-bottom: 1rem;
+  }
+
+  .project-img {
+    width: 50% !important;
+    height: 15rem;
+    overflow: hidden;
+  }
+
+  .project-img img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .project-description {
+    margin-left: auto;
+    width: 47%;
+    height: 15rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-details {
+    flex: 1;
+  }
+
+  .blogs {
+    transform: translateY(-30px);
+
+    grid-row: 5;
+    grid-column: 5 / span 8;
+  }
+
+  .experiences {
+    transform: translateY(4.1rem);
+    grid-column: 1 / span 4;
+  }
+
+  .blog-cover,
+  .blog-img {
+    height: 15rem;
+  }
+  .hobbies {
+    transform: translateY(3.2rem);
+
+    grid-column: 1 / span 4;
+  }
+
+  footer {
+    grid-column: 5 / span 4;
+  }
+  footer a {
+    border-top: none;
+  }
+}

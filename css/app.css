@@ -1,0 +1,592 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+}
+
+body,
+html {
+  font-family: "Montserrat", sans-serif;
+  background-color: #f2f2f2;
+  color: #4f4f4f;
+  margin: 1rem;
+}
+
+li {
+  list-style: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  color: #4f4f4f;
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #4f4f4f;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #4f4f4f;
+}
+
+@media screen and (min-width: 720px) {
+  body {
+    display: grid;
+    grid-template-rows: 17rem 9rem 3rem 1fr;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+  }
+
+  .profile-card-layout {
+    grid-column: 1/span 3;
+    grid-row: span 3;
+  }
+
+  .experiences {
+    grid-column: span 3;
+    grid-row: 4;
+  }
+
+  .experiences-logo {
+    width: 40%;
+  }
+
+  .hobbies {
+    grid-column: span 3;
+    grid-row: 5/span 3;
+  }
+
+  .skills {
+    grid-row: 1/2;
+    grid-column: 4/span 3;
+  }
+
+  .design-card {
+    grid-row: 2;
+    grid-column: 4/span 3;
+  }
+
+  .projects {
+    grid-row: 2;
+    grid-column: 4/span 3;
+    transform: translateY(60px);
+  }
+
+  .project-card {
+    height: auto;
+  }
+
+  .blogs {
+    grid-column: span 3;
+    grid-row: 8;
+    transform: translateY(-1rem);
+  }
+
+  footer {
+    grid-row: 10;
+    grid-column: span 6;
+  }
+}
+@media screen and (min-width: 1100px) {
+  body {
+    min-height: 100vh;
+    display: grid;
+    /* grid-template-rows: 17rem 15rem 15rem auto 1fr 1fr; */
+    grid-template-columns: repeat(12, 1fr);
+    padding: 1rem;
+    max-width: 1250px;
+    margin: 0 auto;
+  }
+
+  .profile-card-layout {
+    grid-column: 1/span 4;
+    height: 35rem;
+  }
+
+  .skills {
+    grid-column: 5/span 9;
+    display: flex;
+  }
+
+  .front-end-card {
+    width: 50%;
+    height: 100%;
+  }
+
+  .design-card {
+    margin-left: 1rem;
+    height: 50%;
+    width: 80%;
+  }
+
+  .projects {
+    transform: translateY(-70px);
+    grid-row: 2;
+    grid-column: 5/span 8;
+  }
+
+  .project-card {
+    display: flex;
+    margin-bottom: 1rem;
+  }
+
+  .project-img {
+    width: 50% !important;
+    height: 15rem;
+    overflow: hidden;
+  }
+
+  .project-img img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .project-description {
+    margin-left: auto;
+    width: 47%;
+    height: 15rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-details {
+    flex: 1;
+  }
+
+  .blogs {
+    transform: translateY(-30px);
+    grid-row: 5;
+    grid-column: 5/span 8;
+  }
+
+  .experiences {
+    transform: translateY(4.1rem);
+    grid-column: 1/span 4;
+  }
+
+  .blog-cover,
+.blog-img {
+    height: 15rem;
+  }
+
+  .hobbies {
+    transform: translateY(3.2rem);
+    grid-column: 1/span 4;
+  }
+
+  footer {
+    grid-column: 5/span 4;
+  }
+
+  footer a {
+    border-top: none;
+  }
+}
+.profile-card-layout {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.profile-card-layout .card-image {
+  overflow: hidden;
+  width: 100%;
+  max-width: 25rem;
+  border-radius: 12px;
+}
+.profile-card-layout .card-image img {
+  width: 100%;
+  object-fit: cover;
+}
+.profile-card-layout .card-info {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+.profile-card-layout .card-info p:first-child {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: #4f4f4f;
+}
+.profile-card-layout .card-info p:last-child {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  color: #4f4f4f;
+  width: 80%;
+}
+.profile-card-layout .card-contact {
+  margin-bottom: 1rem;
+}
+.profile-card-layout .card-contact .card-email,
+.profile-card-layout .card-contact .card-phone {
+  transition: 0.2s ease-out #2f80ed;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.profile-card-layout .card-contact i {
+  transform: translateY(1px);
+}
+.profile-card-layout .card-about_me {
+  display: flex;
+  position: relative;
+  width: 80%;
+  margin-bottom: 1rem;
+}
+.profile-card-layout .card-about_me p {
+  font-family: "Montserrat", sans-serif;
+  color: #828282;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.front-end-card {
+  background-color: #ffffff;
+  box-sizing: border-box;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 1rem;
+  height: 200px;
+}
+.front-end-card h2 {
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+.front-end-card .skill-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.front-end-card .skill-bar p {
+  font-size: 13px;
+}
+.front-end-card .bar {
+  margin-left: auto;
+  border-radius: 12px;
+  width: 60%;
+  height: 0.5rem;
+  background-color: #c4c4c4;
+  margin-right: 10px;
+}
+.front-end-card .bar .progress {
+  height: 0.5rem;
+  border-radius: 5px;
+  background-color: #2f80ed;
+}
+.front-end-card .bar .js {
+  width: 50%;
+}
+.front-end-card .bar .react {
+  width: 40%;
+}
+.front-end-card .bar .css {
+  width: 70%;
+}
+.front-end-card .bar .sass {
+  width: 65%;
+}
+.front-end-card .bar .python {
+  width: 70%;
+}
+
+.design-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 1rem;
+  height: 120px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.design-card h2 {
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+.design-card .skill-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.design-card .skill-bar p {
+  font-size: 13px;
+}
+.design-card .bar {
+  margin-left: auto;
+  border-radius: 12px;
+  width: 60%;
+  height: 0.5rem;
+  background-color: #c4c4c4;
+  margin-right: 10px;
+}
+.design-card .bar .progress {
+  height: 0.5rem;
+  border-radius: 5px;
+  background-color: #2f80ed;
+}
+.design-card .bar .fg {
+  width: 60%;
+}
+.design-card .bar .ps {
+  width: 70%;
+}
+
+.projects-count-card {
+  background-color: #ffffff;
+  box-sizing: border-box;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.project-card {
+  background-color: #ffffff;
+  box-sizing: border-box;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.project-card .project-img {
+  width: 100%;
+  overflow: hidden;
+  height: 15rem;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+}
+.project-card .project-img img {
+  width: 100%;
+  height: 100%;
+}
+.project-card .project-tags {
+  display: flex;
+  margin-bottom: 1rem;
+  color: #828282;
+  font-size: 13px;
+}
+.project-card .project-title {
+  margin-bottom: 0.5rem;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.project-card .project-details {
+  font-size: 13px;
+  margin-bottom: 2rem;
+}
+.project-card button {
+  border: none;
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
+}
+.project-card button a {
+  text-decoration: none;
+  color: #2f80ed;
+  border-radius: 10px;
+  background-color: #ffffff;
+  padding: 0.5rem 2rem;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.2 ease-out all;
+}
+.project-card .demo-btn a {
+  color: #ffffff;
+  background-color: #2f80ed;
+  border: none;
+}
+.project-card .code-btn a {
+  border: 1px solid #2f80ed;
+}
+
+.project-card:last-child {
+  margin-bottom: 2rem;
+}
+
+.blogs-count-card {
+  background-color: #ffffff;
+  box-sizing: border-box;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.blogs-card {
+  background-color: #ffffff;
+  box-sizing: border-box;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem 0 1rem 1rem;
+}
+.blogs-card p {
+  color: #c4c4c4;
+  font-size: 0.8rem;
+  margin-bottom: 0.6rem;
+  font-weight: 500;
+  font-size: 13px;
+}
+.blogs-card .blog-cover {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+.blogs-card .blogs-card-title {
+  margin-top: 1rem;
+  width: 50%;
+}
+.blogs-card .blogs-card-title h1 {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 0.6rem;
+}
+.blogs-card .blog-img {
+  width: 60%;
+  transform: translateX(5%);
+  height: 11rem;
+  overflow: hidden;
+  border-radius: 12px;
+}
+.blogs-card .blog-img img {
+  width: 100%;
+  object-fit: cover;
+}
+.blogs-card .blogs-card-detail {
+  padding: 0.6rem;
+  line-height: 1.7rem;
+}
+.blogs-card .blogs-card-detail p {
+  font-size: 13px;
+  font-weight: 500;
+  color: #828282;
+}
+.blogs-card .blog-link a {
+  text-decoration: none;
+  color: #2f80ed;
+  font-size: 13px;
+}
+
+.experiences {
+  background-color: #ffffff;
+  box-sizing: border-box;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.experiences .experiences-card h1 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.experiences .experiences-item {
+  display: flex;
+  margin-bottom: 2rem;
+}
+.experiences .experiences-about {
+  margin-left: 2rem;
+}
+.experiences .experiences-logo {
+  width: 30%;
+  margin-right: 1rem;
+  overflow: hidden;
+  margin-top: 3rem;
+}
+.experiences .experiences-logo img {
+  width: 100%;
+}
+.experiences .experiences-date {
+  margin-bottom: 1rem;
+  color: #828282;
+  font-weight: 500;
+  font-size: 13px;
+}
+.experiences .experiences-job {
+  font-weight: 600;
+  margin-bottom: 2rem !important;
+}
+.experiences .experiences-job,
+.experiences .experiences-details {
+  margin-bottom: 0.7rem;
+}
+
+.hobbies {
+  background-color: #ffffff;
+  box-sizing: border-box;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.hobbies .hobbies-card h1 {
+  margin-bottom: 1rem;
+  font-size: 18px;
+  font-weight: 600;
+}
+.hobbies .hobbies-image {
+  width: 100%;
+  height: 10rem;
+  margin-right: 1rem;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+.hobbies .hobbies-details {
+  margin-bottom: 1rem;
+}
+.hobbies p:first-child {
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+.hobbies p:last-child {
+  margin-bottom: 1rem;
+}
+.hobbies .hobbies-image img {
+  width: 100%;
+  object-fit: cover;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  color: #828282;
+}
+footer a {
+  color: #828282;
+  text-decoration: none;
+  transition: 0.3s ease-in-out all;
+}
+footer a:hover {
+  color: #2f80ed;
+}
+
+/*# sourceMappingURL=app.css.map */
